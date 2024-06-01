@@ -36,8 +36,10 @@ public class Products {
     private LocalTime createdAt;
     @Column(columnDefinition = "updated_at")
     private LocalTime updatedAt;
-    //@Column(columnDefinition = "category_id")
-    //private Category category;
+
+    @ManyToOne
+    @JoinColumn(name = "category_id",nullable = false)
+    private Category category;
 
 
 
