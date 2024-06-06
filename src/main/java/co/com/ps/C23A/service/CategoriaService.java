@@ -20,7 +20,8 @@ public class CategoriaService implements ICategoryService{
     @Override
     public Category findById(Long idCategory) {
       Optional<Category> categoryTmp = categoryRepository.findById(idCategory);
-        if (categoryTmp.isPresent()) {
+
+       if (categoryTmp.isPresent()) {
             return categoryTmp.get();
         }else{
             throw new RuntimeException("Category not found" + idCategory);
