@@ -5,10 +5,7 @@ import co.com.ps.C23A.domain.Category;
 import co.com.ps.C23A.service.ICategoryService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RequiredArgsConstructor
 @RestController
@@ -25,6 +22,17 @@ public class CategoryController {
         }catch (RuntimeException e){
             return ResponseEntity.notFound().build();
         }
+
+    }
+
+    @PostMapping
+    public ResponseEntity<Category> saveCategory(@RequestBody Category category){
+        try {
+            return ResponseEntity.ok(categoryService.save(category));
+        }catch (RuntimeException e){
+            return ResponseEntity.notFound().build();
+        }
+
 
     }
 
