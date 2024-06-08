@@ -24,7 +24,6 @@ public class CategoryController {
         }catch (RuntimeException e){
             return ResponseEntity.notFound().build();
         }
-
     }
 
     @PostMapping

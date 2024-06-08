@@ -67,5 +67,6 @@ public class CategoriaService implements ICategoryService{
         }else {
             throw new RuntimeException("Category not found with id: " + idCategory);
         }
+
     }
 }
